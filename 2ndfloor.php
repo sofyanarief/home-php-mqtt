@@ -14,24 +14,24 @@ if(isset($_SESSION['username'])){
     <title>EnGiNe-HoMe Automation | 2nd Floor</title>
 
     <!-- Bootstrap -->
-    <link href="vendor/ourgapps/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="vendor/ourgapps/gentelella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="vendor/ourgapps/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="vendor/ourgapps/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	<!-- Switchery -->
-    <link href="vendor/ourgapps/gentelella/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
     <!-- bootstrap-progressbar -->
-    <link href="vendor/ourgapps/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="vendor/ourgapps/gentelella/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="../vendor/ourgapps/gentelella/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="vendor/ourgapps/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="vendor/ourgapps/gentelella/build/css/custom.min.css" rel="stylesheet">
+    <link href="../vendor/ourgapps/gentelella/build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md footer_fixed">
@@ -78,15 +78,16 @@ if(isset($_SESSION['username'])){
     </div>
 
     <!-- jQuery -->
-    <script src="vendor/ourgapps/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="vendor/ourgapps/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script>
-        var base_url = window.location.origin;
-        // $(document).ready(function(){
-        //     getswstatus('heaterlt2');
-        // });
+        var base_url = document.URL.substr(0,document.URL.lastIndexOf('/'));
+        console.log(base_url);
+        $(document).ready(function(){
+            getswstatus('heaterlt2');
+        });
 
         $('#swheaterlt2').change(function() {
             if($('#swheaterlt2')[0].checked == 1){
@@ -142,8 +143,10 @@ if(isset($_SESSION['username'])){
                     console.log(data);
                     if(data == 'on'){
                         $('#statusheaterlt2').text(' ON ');
+                        $('#swheaterlt2')[0].checked = 1;
                     }else{
                         $('#statusheaterlt2').text(' OFF ');
+                        $('#swheaterlt2')[0].checked = 0;
                     }
                 },
                 error: function(){
@@ -156,43 +159,43 @@ if(isset($_SESSION['username'])){
     </script>
 
     <!-- FastClick -->
-    <script src="vendor/ourgapps/gentelella/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="vendor/ourgapps/gentelella/vendors/nprogress/nprogress.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/nprogress/nprogress.js"></script>
     <!-- Switchery -->
-    <script src="vendor/ourgapps/gentelella/vendors/switchery/dist/switchery.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/switchery/dist/switchery.min.js"></script>
     <!-- Chart.js -->
-    <script src="vendor/ourgapps/gentelella/vendors/Chart.js/dist/Chart.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- gauge.js -->
-    <script src="vendor/ourgapps/gentelella/vendors/gauge.js/dist/gauge.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/gauge.js/dist/gauge.min.js"></script>
     <!-- bootstrap-progressbar -->
-    <script src="vendor/ourgapps/gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
-    <script src="vendor/ourgapps/gentelella/vendors/iCheck/icheck.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/iCheck/icheck.min.js"></script>
     <!-- Skycons -->
-    <script src="vendor/ourgapps/gentelella/vendors/skycons/skycons.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/skycons/skycons.js"></script>
     <!-- Flot -->
-    <script src="vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.resize.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/Flot/jquery.flot.resize.js"></script>
     <!-- Flot plugins -->
-    <script src="vendor/ourgapps/gentelella/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/flot.curvedlines/curvedLines.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/flot.curvedlines/curvedLines.js"></script>
     <!-- DateJS -->
-    <script src="vendor/ourgapps/gentelella/vendors/DateJS/build/date.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/DateJS/build/date.js"></script>
     <!-- JQVMap -->
-    <script src="vendor/ourgapps/gentelella/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="vendor/ourgapps/gentelella/vendors/moment/min/moment.min.js"></script>
-    <script src="vendor/ourgapps/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/moment/min/moment.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="vendor/ourgapps/gentelella/build/js/custom.min.js"></script>
+    <script src="../vendor/ourgapps/gentelella/build/js/custom.min.js"></script>
 
   </body>
 </html>

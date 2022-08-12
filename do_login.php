@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])){
-    if($_POST['username'] == 'engine' &&  md5($_POST['password']) == '54eca697628137955e3ef2925ef887af'){
+    if($_POST['username'] == 'admin' &&  md5($_POST['password']) == '21232f297a57a5a743894a0e4a801fc3'){
         session_start();
         $_SESSION['username'] = $_POST['username'];
         header("location: dashboard.php");

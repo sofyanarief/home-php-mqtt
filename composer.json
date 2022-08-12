@@ -1,6 +1,0 @@
-{
-    "require": {
-        "ourgapps/gentelella": "^1.4",
-        "php-mqtt/client": "^1.4"
-    }
-}
